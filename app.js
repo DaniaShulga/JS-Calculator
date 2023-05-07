@@ -8,13 +8,15 @@ function calculate(button) {
   const value = button.textContent;
   if (value === "CLEAR") {
     calculation = [];
-    screenDisplay.textContent = ".";
+    screenDisplay.textContent = "0";
   } else if (value === "=") {
     screenDisplay.textContent = eval(accumulativeCalculation);
+    screenDisplay.scrollLeft = screenDisplay.scrollWidth;
   } else {
     calculation.push(value);
     accumulativeCalculation = calculation.join("");
     screenDisplay.textContent = accumulativeCalculation;
+    screenDisplay.scrollLeft = screenDisplay.scrollWidth;
   }
 }
 
